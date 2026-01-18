@@ -162,13 +162,14 @@ This project uses the **QM9 molecular dataset**, a standard benchmark in molecul
 
 2. Place the downloaded file in the project root directory or inside a `data/` folder:
 
+```
 alchemy_perceptron/
 ├── data/
 │ └── qm9.csv
 ├── main.py
 ├── mlp_model.py
 └── README.md
-
+```
 3. Ensure the path to `qm9.csv` in `main.py` matches the file location.
 
 > **Note:**  
@@ -208,7 +209,8 @@ python main.py
 - No divergence or numerical instability
 
 **Training Loss Curve:**
-> *(Insert loss curve plot here)*
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/cf56dbb8-6542-480f-8291-a8f3252ec382" />
+
 
 ---
 
@@ -224,7 +226,8 @@ python main.py
 
 The parity plot below compares predicted vs actual HOMO–LUMO gaps.
 
-> *(Insert parity plot image here)*
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/9b7b7a0e-3e12-4f46-9937-50c43b6247c7" />
+
 
 Observed behavior:
 - Predictions cluster around the ideal $$\( y = x \)$$ line
