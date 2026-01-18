@@ -209,9 +209,8 @@ python main.py
 - No divergence or numerical instability
 
 **Training Loss Curve:**
+
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/cf56dbb8-6542-480f-8291-a8f3252ec382" />
-
-
 ---
 
 ### Performance
