@@ -32,10 +32,17 @@ def softmax(x):
     expX = np.exp(x_shifted)
     return expX / np.sum(expX, axis=0, keepdims=True)
 
+def softplus(x):
+    return np.log(1+np.exp(x))
+
+def softplus_derivative(z):
+    return 1 / (1 + np.exp(-z))
+
 activation={"relu":(relu,derivative_relu),
             "tanh":(tanh,derivative_tanh),
             "sigmoid":(sigmoid,derivative_sigmoid),
-            "linear":(linear,derivative_linear)
+            "linear":(linear,derivative_linear),
+            "softplus":(softplus,softplus_derivative)
             }
 #ayers= contains no of neurons in every layers including the input and output
 #confg= a dictionary containing what would be the neuron activation and output activation function
@@ -90,6 +97,9 @@ def back_propagation(x,y,parameters,cache,config):
 
     if(config["output_activation_function"]=="softmax"):
         dZ=cache[f"a{L}"]-y
+    elif(config["output_activation_function"]=="softplus"):
+        dA=cache[f"a{L}"]-y
+        dZ=dA*sigmoid(cache[f"z{L}"])
     else:
         dA=cache[f"a{L}"]-y
         dZ=dA*activation[config["output_activation_function"]][1](cache[f"z{L}"])

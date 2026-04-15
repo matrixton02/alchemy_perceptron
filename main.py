@@ -69,7 +69,7 @@ def train_model(X_train,y_train,X_test,y_test,hidden,lr,iterations):
     print(f"Network Architecture: {layers}")
     config={
         "activation_function":"relu",
-        "output_activation_function":"linear",
+        "output_activation_function":"softplus",
         "loss":"mse"
         }
     
